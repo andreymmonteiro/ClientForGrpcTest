@@ -12,6 +12,11 @@ namespace ClientForGRPC.GrpcServices
         {
             _userClient = userClient;
         }
+        public async Task<ListUserProDto> GetAll(GetAttUserRequest getAllRequest) 
+        {
+            var result = await _userClient.GetAllAsync(getAllRequest);
+            return result;
+        }
         public async Task<UserProDto> Get(string id) 
         {
             var getUserRequest = new GetUserRequest {  Id = id };

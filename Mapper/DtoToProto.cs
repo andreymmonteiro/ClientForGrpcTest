@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using gRPCTest.Protos;
 using Models;
+using System.Collections.Generic;
 
 namespace Mapper
 {
@@ -13,6 +14,7 @@ namespace Mapper
             CreateMap<UserCreateResultDto, UserCreateResultProtoDto>().ReverseMap();
             CreateMap<UserUpdateDto, UpdateUserRequest>().ReverseMap();
             CreateMap<UserUpdateResultDto, UserUpdateResultProtoDto>().ReverseMap();
+            CreateMap<ListUserProDto, List<UserDto>>().ReverseMap();
         }
     }
 }

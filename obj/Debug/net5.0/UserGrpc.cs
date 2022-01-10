@@ -44,6 +44,8 @@ namespace gRPCTest.Protos {
 
     static readonly grpc::Marshaller<global::gRPCTest.Protos.GetUserRequest> __Marshaller_GetUserRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::gRPCTest.Protos.GetUserRequest.Parser));
     static readonly grpc::Marshaller<global::gRPCTest.Protos.UserProDto> __Marshaller_UserProDto = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::gRPCTest.Protos.UserProDto.Parser));
+    static readonly grpc::Marshaller<global::gRPCTest.Protos.GetAttUserRequest> __Marshaller_GetAttUserRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::gRPCTest.Protos.GetAttUserRequest.Parser));
+    static readonly grpc::Marshaller<global::gRPCTest.Protos.ListUserProDto> __Marshaller_ListUserProDto = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::gRPCTest.Protos.ListUserProDto.Parser));
     static readonly grpc::Marshaller<global::gRPCTest.Protos.CreateUserRequest> __Marshaller_CreateUserRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::gRPCTest.Protos.CreateUserRequest.Parser));
     static readonly grpc::Marshaller<global::gRPCTest.Protos.UserCreateResultProtoDto> __Marshaller_UserCreateResultProtoDto = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::gRPCTest.Protos.UserCreateResultProtoDto.Parser));
     static readonly grpc::Marshaller<global::gRPCTest.Protos.UpdateUserRequest> __Marshaller_UpdateUserRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::gRPCTest.Protos.UpdateUserRequest.Parser));
@@ -57,6 +59,13 @@ namespace gRPCTest.Protos {
         "Get",
         __Marshaller_GetUserRequest,
         __Marshaller_UserProDto);
+
+    static readonly grpc::Method<global::gRPCTest.Protos.GetAttUserRequest, global::gRPCTest.Protos.ListUserProDto> __Method_GetAll = new grpc::Method<global::gRPCTest.Protos.GetAttUserRequest, global::gRPCTest.Protos.ListUserProDto>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetAll",
+        __Marshaller_GetAttUserRequest,
+        __Marshaller_ListUserProDto);
 
     static readonly grpc::Method<global::gRPCTest.Protos.CreateUserRequest, global::gRPCTest.Protos.UserCreateResultProtoDto> __Method_Post = new grpc::Method<global::gRPCTest.Protos.CreateUserRequest, global::gRPCTest.Protos.UserCreateResultProtoDto>(
         grpc::MethodType.Unary,
@@ -123,6 +132,22 @@ namespace gRPCTest.Protos {
       public virtual grpc::AsyncUnaryCall<global::gRPCTest.Protos.UserProDto> GetAsync(global::gRPCTest.Protos.GetUserRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_Get, null, options, request);
+      }
+      public virtual global::gRPCTest.Protos.ListUserProDto GetAll(global::gRPCTest.Protos.GetAttUserRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetAll(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual global::gRPCTest.Protos.ListUserProDto GetAll(global::gRPCTest.Protos.GetAttUserRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetAll, null, options, request);
+      }
+      public virtual grpc::AsyncUnaryCall<global::gRPCTest.Protos.ListUserProDto> GetAllAsync(global::gRPCTest.Protos.GetAttUserRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetAllAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncUnaryCall<global::gRPCTest.Protos.ListUserProDto> GetAllAsync(global::gRPCTest.Protos.GetAttUserRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetAll, null, options, request);
       }
       public virtual global::gRPCTest.Protos.UserCreateResultProtoDto Post(global::gRPCTest.Protos.CreateUserRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {

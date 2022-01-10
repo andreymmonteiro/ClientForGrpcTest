@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Models;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace ClientForGRPC.Controllers
@@ -23,12 +24,17 @@ namespace ClientForGRPC.Controllers
             this.serviceGrpc = serviceGrpc;
             this.mapper = mapper.GetMapper();
         }
-
         [HttpGet]
-        public async Task<IActionResult> Get() 
+        public async Task<IActionResult> GetAll() 
         {
-            Guid id = new Guid("9b747618-ea47-43b6-b43f-e94aa4b67c4e");
-            var result = await serviceGrpc.Get(id.ToString());
+            var result = await serviceGrpc.GetAll(new GetAttUserRequest());
+            return Ok(result);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(string id) 
+        {
+            var result = await serviceGrpc.Get(id);
             return Ok(result);
         }
         [HttpPost]
