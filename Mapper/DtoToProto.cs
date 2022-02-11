@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
+using ClientForGRPC.Models.Login;
 using gRPCTest.Protos;
-using Models;
+using Models.User;
 using System.Collections.Generic;
 
 namespace Mapper
@@ -15,6 +16,8 @@ namespace Mapper
             CreateMap<UserUpdateDto, UpdateUserRequest>().ReverseMap();
             CreateMap<UserUpdateResultDto, UserUpdateResultProtoDto>().ReverseMap();
             CreateMap<ListUserProDto, List<UserDto>>().ReverseMap();
+
+            CreateMap<LoginDto, GetUserLoginRequest>().ReverseMap();
         }
     }
 }

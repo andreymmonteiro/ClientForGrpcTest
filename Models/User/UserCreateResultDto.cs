@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Models
+namespace Models.User
 {
     public class UserCreateResultDto
     {

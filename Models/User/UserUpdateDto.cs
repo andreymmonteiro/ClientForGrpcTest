@@ -1,12 +1,10 @@
 ﻿using System;
 
-namespace Models
+namespace Models.User
 {
-    public class UserDto
+    public class UserUpdateDto
     {
         public Guid id { get; set; }
-        public DateTime createDate { get; set; }
-        public DateTime updateDate { get; set; }
         public string name { get; set; }
         public string document { get; set; }
         public int age { get; set; }

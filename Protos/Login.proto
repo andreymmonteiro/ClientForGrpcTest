@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option csharp_namespace = "gRPCTest.Protos";
+
+service Login
+{
+	rpc GetLogin(GetUserLoginRequest)returns(UserLoginProDto);
+}
+message GetUserLoginRequest
+{
+	string userName = 1;
+	string password = 2;
+}
+message UserLoginProDto
+{
+	string id =1;
+    string createDate = 2 ;
+    string updateDate = 3;
+    string name = 4;
+    string document = 5;
+    int32 age = 6;
+    string companyOrPerson = 7;
+}

@@ -27,7 +27,7 @@ namespace ClientForGRPC.GrpcServices
             var result = await _userClient.PostAsync(userCreate);
             return result;
         }
-        public async Task<DeleteUserResponse> Delete(Guid id) 
+        public async Task<DeleteUserResponse> Delete(Guid id)
         {
             DeleteUserRequest request = new DeleteUserRequest { Id = id.ToString() };
             return await _userClient.DeleteAsync(request);

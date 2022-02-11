@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Protos\Login.proto" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
     <PackageReference Include="Grpc.AspNetCore" Version="2.32.0" />
@@ -15,6 +19,7 @@
     <Protobuf Include="..\gRPCTest\gRPCTest\Protos\User.proto" GrpcServices="Client">
       <Link>Protos\User.proto</Link>
     </Protobuf>
+    <Protobuf Include="Protos\Login.proto" />
   </ItemGroup>
 
 </Project>

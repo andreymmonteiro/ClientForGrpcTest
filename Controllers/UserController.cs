@@ -2,11 +2,9 @@
 using ClientForGRPC.GrpcServices;
 using gRPCTest.Protos;
 using Mapper.Interface;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Models;
+using Models.User;
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace ClientForGRPC.Controllers
@@ -24,7 +22,7 @@ namespace ClientForGRPC.Controllers
             this.serviceGrpc = serviceGrpc;
             this.mapper = mapper.GetMapper();
         }
-        [HttpGet]
+        [HttpGet("all")]
         public async Task<IActionResult> GetAll() 
         {
             var result = await serviceGrpc.GetAll(new GetAttUserRequest());
@@ -38,12 +36,12 @@ namespace ClientForGRPC.Controllers
             return Ok(result);
         }
         [HttpPost]
-        public async Task<IActionResult> Post(UserCreateDto userCreate) 
+        public async Task<IActionResult> Post([FromBody] UserCreateDto userCreate) 
         {
             CreateUserRequest userRequest = mapper.Map<CreateUserRequest>(userCreate);
             return Ok(await serviceGrpc.Post(userRequest));
         }
-        [HttpDelete]
+        [HttpDelete("removal/{id}")]
         public async Task<IActionResult> Delete(Guid id) 
         {
             return Ok(await serviceGrpc.Delete(id));

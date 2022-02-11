@@ -27,9 +27,12 @@ namespace ClientForGRPC
 
             services.AddControllers();
             services.AddScoped<UserClientService>();
+            services.AddScoped<LoginClientService>();
 
             services.AddGrpcClient<User.UserClient>(options => options.Address = new Uri(Configuration["GrpcSettings:UserUrl"]));
+            services.AddGrpcClient<Login.LoginClient>(options => options.Address = new Uri(Configuration["GrpcSettings:UserUrl"]));
             services.AddScoped<IMapperGrpc, AutoMapperFixtureGrpc>();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ClientForGRPC", Version = "v1" });

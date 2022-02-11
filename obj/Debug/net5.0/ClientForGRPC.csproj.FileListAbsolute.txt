@@ -5,7 +5,6 @@ C:\Estudos\ClientForGRPC\bin\Debug\net5.0\ClientForGRPC.deps.json
 C:\Estudos\ClientForGRPC\bin\Debug\net5.0\ClientForGRPC.runtimeconfig.json
 C:\Estudos\ClientForGRPC\bin\Debug\net5.0\ClientForGRPC.runtimeconfig.dev.json
 C:\Estudos\ClientForGRPC\bin\Debug\net5.0\ClientForGRPC.dll
-C:\Estudos\ClientForGRPC\bin\Debug\net5.0\ref\ClientForGRPC.dll
 C:\Estudos\ClientForGRPC\bin\Debug\net5.0\ClientForGRPC.pdb
 C:\Estudos\ClientForGRPC\bin\Debug\net5.0\Google.Protobuf.dll
 C:\Estudos\ClientForGRPC\bin\Debug\net5.0\Grpc.AspNetCore.Server.dll
@@ -34,3 +33,5 @@ C:\Estudos\ClientForGRPC\obj\Debug\net5.0\ClientForGRPC.pdb
 C:\Estudos\ClientForGRPC\obj\Debug\net5.0\ClientForGRPC.genruntimeconfig.cache
 C:\Estudos\ClientForGRPC\bin\Debug\net5.0\AutoMapper.dll
 C:\Estudos\ClientForGRPC\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Estudos\ClientForGRPC\obj\Debug\net5.0\ClientForGRPC.csproj.CopyComplete
+C:\Estudos\ClientForGRPC\obj\Debug\net5.0\refint\ClientForGRPC.dll
