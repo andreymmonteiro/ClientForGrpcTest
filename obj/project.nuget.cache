@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "wHJkN+VqVejHpxYbMdpdYachM301e5xQv3U8OcovSXqNNTBZ7d+hEL6sG7lbIowDzglv/DE9oicRvlxXsW+K7A==",
+  "dgSpecHash": "a42JkA7El6MlfzYkvKpY5CIIQc/LIL5zYpdqjpYi6+SbuPeVc/NMRkpROBfYt2+nECsVxqasew2348WTkjR47g==",
   "success": true,
   "projectFilePath": "C:\\Estudos\\ClientForGRPC\\ClientForGRPC.csproj",
   "expectedPackageFiles": [
@@ -35,8 +35,7 @@
     "C:\\Users\\Workstation\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.5.1\\system.diagnostics.diagnosticsource.4.5.1.nupkg.sha512",
     "C:\\Users\\Workstation\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
     "C:\\Users\\Workstation\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512",
-    "C:\\Users\\Workstation\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
-    "C:\\Users\\Workstation\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.9\\microsoft.netcore.app.host.win-x64.5.0.9.nupkg.sha512"
+    "C:\\Users\\Workstation\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512"
   ],
   "logs": []
 }
