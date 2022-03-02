@@ -11,7 +11,7 @@ service User
     rpc Delete(DeleteUserRequest) returns(DeleteUserResponse);
 }
 message GetAttUserRequest{
-
+    string token = 1;
 }
 message ListUserProDto{
     repeated UserProDto UsersProDto = 1;
@@ -19,6 +19,7 @@ message ListUserProDto{
 message GetUserRequest
 {
 	string id = 1; 
+    string token = 2;
 }
 message UserProDto
 {
@@ -29,6 +30,7 @@ message UserProDto
         string document = 5;
         int32 age = 6;
         string companyOrPerson = 7;
+        string token = 8;
 }
 message CreateUserRequest
 {
@@ -36,6 +38,7 @@ message CreateUserRequest
         string document = 2;
         int32 age = 3;
         string companyOrPerson = 4;
+        string token = 5;
 }
 message UserCreateResultProtoDto
 {
@@ -53,6 +56,7 @@ message UpdateUserRequest
         string document = 4;
         int32 age = 5;
         string companyOrPerson = 6;
+        string token = 7;
 }
 message UserUpdateResultProtoDto
 {
@@ -66,6 +70,7 @@ message UserUpdateResultProtoDto
 message DeleteUserRequest
 {
     string id = 1; 
+    string token = 2;
 }
 message DeleteUserResponse
 {

@@ -22,10 +22,10 @@ namespace ClientForGRPC.Controllers
             this.serviceGrpc = serviceGrpc;
             this.mapper = mapper.GetMapper();
         }
-        [HttpGet("all")]
-        public async Task<IActionResult> GetAll() 
+        [HttpPost("all")]
+        public async Task<IActionResult> GetAll(GetAttUserRequest request) 
         {
-            var result = await serviceGrpc.GetAll(new GetAttUserRequest());
+            var result = await serviceGrpc.GetAll(request);
             return Ok(result);
         }
 

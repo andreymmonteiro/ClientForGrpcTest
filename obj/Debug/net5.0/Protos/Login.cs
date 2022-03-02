@@ -25,17 +25,18 @@ namespace gRPCTest.Protos {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChJQcm90b3MvTG9naW4ucHJvdG8iOQoTR2V0VXNlckxvZ2luUmVxdWVzdBIQ",
-            "Cgh1c2VyTmFtZRgBIAEoCRIQCghwYXNzd29yZBgCIAEoCSKLAQoPVXNlckxv",
+            "Cgh1c2VyTmFtZRgBIAEoCRIQCghwYXNzd29yZBgCIAEoCSKaAQoPVXNlckxv",
             "Z2luUHJvRHRvEgoKAmlkGAEgASgJEhIKCmNyZWF0ZURhdGUYAiABKAkSEgoK",
             "dXBkYXRlRGF0ZRgDIAEoCRIMCgRuYW1lGAQgASgJEhAKCGRvY3VtZW50GAUg",
-            "ASgJEgsKA2FnZRgGIAEoBRIXCg9jb21wYW55T3JQZXJzb24YByABKAkyOwoF",
-            "TG9naW4SMgoIR2V0TG9naW4SFC5HZXRVc2VyTG9naW5SZXF1ZXN0GhAuVXNl",
-            "ckxvZ2luUHJvRHRvQhKqAg9nUlBDVGVzdC5Qcm90b3NiBnByb3RvMw=="));
+            "ASgJEgsKA2FnZRgGIAEoBRIXCg9jb21wYW55T3JQZXJzb24YByABKAkSDQoF",
+            "dG9rZW4YCCABKAkyOwoFTG9naW4SMgoIR2V0TG9naW4SFC5HZXRVc2VyTG9n",
+            "aW5SZXF1ZXN0GhAuVXNlckxvZ2luUHJvRHRvQhKqAg9nUlBDVGVzdC5Qcm90",
+            "b3NiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::gRPCTest.Protos.GetUserLoginRequest), global::gRPCTest.Protos.GetUserLoginRequest.Parser, new[]{ "UserName", "Password" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::gRPCTest.Protos.UserLoginProDto), global::gRPCTest.Protos.UserLoginProDto.Parser, new[]{ "Id", "CreateDate", "UpdateDate", "Name", "Document", "Age", "CompanyOrPerson" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::gRPCTest.Protos.UserLoginProDto), global::gRPCTest.Protos.UserLoginProDto.Parser, new[]{ "Id", "CreateDate", "UpdateDate", "Name", "Document", "Age", "CompanyOrPerson", "Token" }, null, null, null, null)
           }));
     }
     #endregion
@@ -286,6 +287,7 @@ namespace gRPCTest.Protos {
       document_ = other.document_;
       age_ = other.age_;
       companyOrPerson_ = other.companyOrPerson_;
+      token_ = other.token_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -371,6 +373,17 @@ namespace gRPCTest.Protos {
       }
     }
 
+    /// <summary>Field number for the "token" field.</summary>
+    public const int TokenFieldNumber = 8;
+    private string token_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Token {
+      get { return token_; }
+      set {
+        token_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as UserLoginProDto);
@@ -391,6 +404,7 @@ namespace gRPCTest.Protos {
       if (Document != other.Document) return false;
       if (Age != other.Age) return false;
       if (CompanyOrPerson != other.CompanyOrPerson) return false;
+      if (Token != other.Token) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -404,6 +418,7 @@ namespace gRPCTest.Protos {
       if (Document.Length != 0) hash ^= Document.GetHashCode();
       if (Age != 0) hash ^= Age.GetHashCode();
       if (CompanyOrPerson.Length != 0) hash ^= CompanyOrPerson.GetHashCode();
+      if (Token.Length != 0) hash ^= Token.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -448,6 +463,10 @@ namespace gRPCTest.Protos {
         output.WriteRawTag(58);
         output.WriteString(CompanyOrPerson);
       }
+      if (Token.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(Token);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -485,6 +504,10 @@ namespace gRPCTest.Protos {
         output.WriteRawTag(58);
         output.WriteString(CompanyOrPerson);
       }
+      if (Token.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(Token);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -514,6 +537,9 @@ namespace gRPCTest.Protos {
       }
       if (CompanyOrPerson.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(CompanyOrPerson);
+      }
+      if (Token.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Token);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -546,6 +572,9 @@ namespace gRPCTest.Protos {
       }
       if (other.CompanyOrPerson.Length != 0) {
         CompanyOrPerson = other.CompanyOrPerson;
+      }
+      if (other.Token.Length != 0) {
+        Token = other.Token;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -589,6 +618,10 @@ namespace gRPCTest.Protos {
             CompanyOrPerson = input.ReadString();
             break;
           }
+          case 66: {
+            Token = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -629,6 +662,10 @@ namespace gRPCTest.Protos {
           }
           case 58: {
             CompanyOrPerson = input.ReadString();
+            break;
+          }
+          case 66: {
+            Token = input.ReadString();
             break;
           }
         }

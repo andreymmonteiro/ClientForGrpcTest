@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace ClientForGRPC.GrpcServices
 {
-    public class UserClientService
+    public class UserClientService : TokenService
     {
         private readonly User.UserClient _userClient;
 
@@ -14,7 +14,8 @@ namespace ClientForGRPC.GrpcServices
         }
         public async Task<ListUserProDto> GetAll(GetAttUserRequest getAllRequest) 
         {
-            var result = await _userClient.GetAllAsync(getAllRequest);
+            var header = AddHeaderToken(getAllRequest.Token);
+            var result = await _userClient.GetAllAsync(getAllRequest, cancellationToken : CancelattionToken.Token, headers : header);
             return result;
         }
         public async Task<UserProDto> Get(string id) 

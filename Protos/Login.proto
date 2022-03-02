@@ -20,4 +20,5 @@ message UserLoginProDto
     string document = 5;
     int32 age = 6;
     string companyOrPerson = 7;
+    string token = 8;
 }

@@ -1,4 +1,7 @@
-﻿using gRPCTest.Protos;
+﻿using Grpc.Core;
+using gRPCTest.Protos;
+using System;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ClientForGRPC.GrpcServices
@@ -11,10 +14,9 @@ namespace ClientForGRPC.GrpcServices
         {
             _login = login;
         }
-        public async Task<UserLoginProDto> GetLogin(GetUserLoginRequest request) 
+        public async Task<UserLoginProDto> GetLogin(GetUserLoginRequest request)
         {
             return await _login.GetLoginAsync(request);
         }
-
     }
 }
